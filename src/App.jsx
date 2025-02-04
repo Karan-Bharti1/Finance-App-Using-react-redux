@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import IncomeExpenseForm from './IncomeExpenseForm'
+import FinanceSummary from './FinanceSummary'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <IncomeExpenseForm/>
+      <FinanceSummary/>
     </>
   )
 }

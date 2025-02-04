@@ -1,7 +1,18 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addExpenses, addIncome } from "./actions";
 
 const IncomeExpenseForm=()=>{
     const [amount,setAmount]=useState(0)
+    const dispatch=useDispatch()
+    const handleAddIncome=()=>{
+        dispatch(addIncome(parseFloat(amount)))
+        setAmount(0)
+    }
+    const handleAddExpense=()=>{
+        dispatch(addExpenses(parseFloat(amount)))
+        setAmount(0)
+    }
     return (
         <div>
             <input  type="number" onChange={(e)=>setAmount(e.target.value)} value={amount}/>
