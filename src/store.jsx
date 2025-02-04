@@ -1,5 +1,6 @@
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import { financeReducer } from "./financeReducer";
-const initialState={income:0,expenses:0}
+import loggerMiddleware from "./loggerMiddleware";
 
-export default createStore(financeReducer)
+const store=createStore(financeReducer,applyMiddleware(loggerMiddleware))
+export default store
